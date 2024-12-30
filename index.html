@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flowers</title>
+    
+    <style>
+ 
+
+
+
+
+body {
+    overflow-x: hidden;
+   width: 100vw;
+   height: 100vh;
+ padding:0;
+  margin: 0 auto;
+  background-color: #895a5a;
+}
+
+header {
+    position: fixed; /* Меню фиксировано в верхней части */
+    top: 0; /* Прикрепляем к верхней части */
+    left: 0; /* Прикрепляем к левому краю */
+    width: 100%; /* Растягиваем на всю ширину */
+    z-index: 2; /* Заголовок выше overlay */
+}
+
+nav {
+    display: flex; /* Используем flexbox для навигации */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    font-size: large;
+    background-color: #9c7878; /* Темно-коричневый фон */
+    padding: 10px 20px; /* Отступы для навигации */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень для визуального отделения */
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #000000; /* Белый цвет текста */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.text{
+    color: #342727; /* Белый цвет текста */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav a:hover { /* Подчеркивание при наведении */
+    color: #fff; /* Цвет текста при наведении остается белым */
+}
+
+nav a:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+.container {
+    display: flex; /* Используем flexbox для контейнера */
+    flex-direction: row; /* Горизонтальное расположение элементов */
+    align-items: center; /* Центрируем по вертикали */
+    width: 100%; /* Занимаем всю ширину */
+    height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(360deg, #e7cfe3, #95877f);
+}
+.container_contact {
+    display: flex; /* Используем flexbox для контейнера */
+    flex-direction: column; /* Горизонтальное расположение элементов */
+    align-items: center; /* Центрируем по вертикали */
+    width: 100%; /* Занимаем всю ширину */
+    height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text-section {
+    text-decoration: solid;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    flex: 1; /* Занимает оставшееся пространство */
+    padding-left: 50px; /* Отступ слева */
+}
+
+.image-section {
+    position: relative; /* Для позиционирования фона и изображения */
+    width: 470px; /* Увеличиваем ширину контейнера с изображением */
+    height: 470px; /* Увеличиваем высоту контейнера с изображением */
+    border-radius: 50%; /* Делаем контейнер круглым */
+    overflow: hidden; /* Скрываем часть изображения, выходящую за пределы контейнера */
+    background-color: #9c7878; /* Цвет фона для круглого элемента */
+    padding: 10px; /* Отступ для создания эффекта выхода фона */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.819); /* Подсвечивающаяся рамка (золотая) */
+    display: flex; /* Используем flexbox для выравнивания содержимого */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 40px;
+}
+
+.image-section img {
+    width: 90%; /* Ширина изображения 90% от родителя (уменьшаем немного) */
+    border-radius: 50%; /* Делаем само изображение круглым */
+}
+
+.cta-button {
+    text-decoration: none;  
+    color: rgb(0, 0, 0);
+    margin-top: 10px; 
+    padding: 10px 20px;
+    border-radius: 40%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:#ba7b7b;
+}
+
+.cta-button:hover {
+    text-decoration: none; 
+    margin-top: 10px; 
+    padding: 10px 20px; 
+    background-color: #000000; 
+    color:#fff;
+}
+
+/* Медиа-запросы для адаптивности */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Изменяем направление на вертикальное */
+        height: auto; /* Высота адаптивная */
+        padding-top: 60px; /* Отступ сверху для фиксированного заголовка */
+    }
+
+    .text-section {
+        padding-left: 0; /* Убираем отступ слева на мобильных устройствах */
+        padding-bottom: 20px; /* Добавляем отступ снизу для разделения текста и изображения */
+        text-align: center; /* Выравниваем текст по центру */
+        font-size: medium; /* Уменьшаем размер шрифта для мобильных устройств */
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .image-section {
+        width: 300px; /* Уменьшаем ширину изображения на мобильных устройствах */
+        height: 300px; /* Уменьшаем высоту изображения на мобильных устройствах */
+        padding: 5px; /* Уменьшаем отступ для уменьшения размера фона */
+        margin-bottom: 20px; /* Добавляем отступ снизу для разделения элементов */
+    }
+
+    .cta-button {
+        padding: 8px 16px; /* Уменьшаем размер кнопки на мобильных устройствах */
+        font-size: medium; /* Уменьшаем размер шрифта кнопки на мобильных устройствах */
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        font-size: medium; /* Уменьшаем размер шрифта навигации на маленьких экранах */
+        padding: 8px 10px; /* Уменьшаем отступы в навигации на маленьких экранах */
+    }
+
+    nav a {
+        margin-right: 10px; /* Уменьшаем отступ между элементами навигации на маленьких экранах */
+    }
+
+    .text-section {
+        font-size: small; /* Еще больше уменьшаем размер шрифта для очень маленьких экранов */
+    }
+
+    .image-section {
+        width: 250px; /* Уменьшаем ширину изображения на очень маленьких устройствах */
+        height: 250px; /* Уменьшаем высоту изображения на очень маленьких устройствах */
+    }
+
+    .cta-button {
+        padding: 6px 12px; /* Уменьшаем размер кнопки на очень маленьких устройствах */
+        font-size: small; /* Уменьшаем размер шрифта кнопки на очень маленьких устройствах */
+    }
+}
+        * {
+    box-sizing: border-box; /* Учитываем отступы и границы */
+}
+
+.achieve {
+    
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: auto; /* Высота адаптивная */
+    background-color: #895a5a;
+    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
+    justify-content: space-between; /* Распределяем элементы с равными отступами */
+}
+
+
+.flex-item {
+    background-color: #9c7878;
+    border-radius: 20%;
+    width: calc(33.33% - 40px); /* Учитываем отступы */
+    padding: 20px;
+    text-align: center;
+    margin: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.flex-item img {
+    width: 100%; /* Заполняем ширину родительского элемента */
+    height: auto; /* Высота автоматически подстраивается */
+    max-width: 200px; /* Ограничиваем максимальную ширину */
+    max-height: 200px; /* Ограничиваем максимальную высоту */
+    object-fit: cover; /* Изображение будет обрезано, чтобы заполнить область */
+    border-radius: 30%; 
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .flex-item {
+        width: calc(50% - 40px); /* Два элемента в ряд на мобильных устройствах */
+    }
+
+    .flex-item img {
+        max-width: 150px; /* Уменьшаем размер изображений на мобильных */
+        max-height: 150px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-item {
+        width: calc(100% - 40px); /* Один элемент в ряд на очень маленьких экранах */
+    }
+
+    .flex-item img {
+        max-width: 100px; /* Уменьшаем размер изображений еще больше */
+        max-height: 100px; 
+    }
+}
+.photo {
+    display: flex;
+    flex-direction: row; /* Располагаем элементы в ряд */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
+    width: 100vw; /* Ширина контейнера */
+    height: auto; /* Высота адаптивная */
+    margin: 20px; /* Центрируем контейнер по горизонтали */
+    margin-top:50px;
+}
+
+.photo img {
+    border-radius: 50%; /* Делаем изображения круглыми */
+    width: 300px; /* Фиксированная ширина */
+    height: 300px; /* Фиксированная высота */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило круг */
+    margin: 10px; /* Отступы между изображениями */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .photo img {
+        width: 150px; /* Уменьшаем размер изображений на мобильных устройствах */
+        height: 150px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .photo img {
+        width: 100px; /* Еще больше уменьшаем размер изображений на очень маленьких экранах */
+        height: 100px; 
+    }
+}
+.contact {
+  min-height: 100vh; /* Высота на весь экран */
+  display: flex;
+  flex-direction: column; /* Изменяем направление на колонку */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(360deg, #e7cfe3, #95877f);
+  color: #ffffff;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contact_title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+.contact_description {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.contact_form {
+  max-width: 700px;
+  width: 100%; /* Устанавливаем ширину на 100% для адаптивности */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #9c7878; 
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 205px rgba(0, 0, 0, 0.800);
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_group label {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.form_group input,
+.form_group textarea {
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f5f5f5;
+  color: #000000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact_button {
+  padding: 20px;
+  font-size: 18px;
+  color: #000000;
+  background-color:#895a5a;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;  
+}
+
+.contact_button:hover {
+  background: linear-gradient(145deg, #000000, #000000);
+  color:#fff;
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+    .contact__title {
+        font-size: 28px; /* Уменьшаем размер заголовка на мобильных устройствах */
+    }
+
+    .contact__description {
+        font-size: 16px; /* Уменьшаем размер описания на мобильных устройствах */
+    }
+
+    .contact__form {
+        padding: 15px; /* Уменьшаем отступы внутри формы */
+    }
+
+    .form__group input,
+    .form__group textarea {
+        font-size: 14px; /* Уменьшаем размер шрифта для полей ввода */
+    }
+
+    .contact__button {
+        font-size: 14px; /* Уменьшаем размер кнопки на мобильных устройствах */
+    }
+}
+
+
+.l{
+    font-size: larger;
+}
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <nav>
+            <a href="#about">Портфолио</a>
+            <a href="#services">Услуги</a>
+            <a href="#feedback">Обратная связь</a>
+        </nav>
+    </header>
+
+    <div id="about" class="container">
+        <div class="text-section">
+            <h1>Добро пожаловать в мир цветов!</h1>
+            <p class="text">С любовью к цветам я создаю уникальные композиции, которые помогут вам выразить свои чувства и добавить красоты в вашу жизнь, сделать каждый момент особенным <div class="l">&#9825</div></p>
+        </div>
+        <div class="image-section">
+            <img src="fl9.jpg" alt="Flowers"> 
+        </div>
+    </div>
+    <div id="services" class="achieve">
+        <div class="flex-item">
+            <h3><em>Букет цветов на заказ</em></h3>
+        <p> Нужен букет на заказ? </p>
+        <p class="text">Доверьтесь мне! И я создам уникальную композицию в соответствии с вашими пожеланиями и тематикой торжества.
+
+            Я подберу цветовую гамму, размер, учту другие ваши пожелания. И помогу воплотить ваши мечты в цветочном дизайне!
+             </p>
+        <img src="fl6.jpg" >
+        <p><a href="#one" class="cta-button">Подробнее</a></p>
+        </div>
+        <div class="flex-item">
+            <h3><em>Свадебная флористика</em></h3>
+        <p class="text"> Каждая влюблённая пара уникальна, а значит — таким должен быть и свадебный декор. Представьте, как цветочные аккорды сливаются в мелодию, которая рассказывает историю вашей любви! Волшебство, не правда ли?
+           Я воплощу в жизнь даже самые смелые задумки. Я использую только свежие цветы от надёжных поставщиков, чтобы ваш праздник стал поистине незабываемым
+             </p>
+        <img src="fl30.jpg" >
+        <p><a href="#two" class="cta-button">Подробнее</a></p>
+        </div>
+        <div class="flex-item">
+            <h3><em>Оформление мероприятий цветами</em></h3>
+        <p class="text"> Флористика - большее, чем просто украшение помещения красивыми цветами. По-настоящему талантливый декоратор - и художник, и психолог. Важно понимать, какие эмоции должна вызывать цветочная композиция у зрителей. Поэтому я всегда стараюсь получить от заказчика как можно больше информации о проекте - только так можно воплотить мечту в жизнь </p>
+        <img src="fl16.jpg" >
+        <p><a href="#three" class="cta-button">Подробнее</a></p>
+        </div>
+    </div>
+    <div id="one" class="photo">
+        <img src="fl8.jpg" >
+        <img src="fl2.jpg" >
+        <img src="fl3.jpg" >
+        <img src="fl4.jpg" >
+    </div>
+    <div id="two" class="photo">
+        <img src="fl22.jpg" >
+        <img src="fl21.jpg" >
+        <img src="fl5.jpg" >
+        <img src="fl20.jpg" >
+    </div>
+    <div id="three" class="photo">
+        <img src="fl23.jpg" >
+        <img src="fl24.jpg" >
+        <img src="fl25.jpg" >
+        <img src="fl26.jpg" >
+    </div>
+   <div class="contact" id="feedback">
+        <div class="container_contact">
+          <h2 class="contact_title">Обратная связь</h2>
+          <p class="contact_description">
+           Есть вопросы/отзывы или предложения? Напишите нам! 
+          </p>
+          <form class="contact_form" action="https://getform.io/f/ajjjldwa" method="POST">
+            <div class="form_group">
+              <label for="name">Имя:</label>
+              <input type="text" id="name" name="name" placeholder="Введите ваше имя" required />
+            </div>
+            <div class="form_group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Введите ваш email" required />
+            </div>
+            <div class="form_group">
+              <label for="message">Сообщение:</label>
+              <textarea id="message" name="message" placeholder="Напишите что-нибудь" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="contact_button">Отправить</button>
+          </form>
+        </div>
+        
+    
+</body>
+
+</html>
+
