@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flowers</title>
-    
     <style>
- 
-
-
-
-
 body {
     overflow-x: hidden;
    width: 100vw;
@@ -19,57 +13,56 @@ body {
   margin: 0 auto;
   background-color: #895a5a;
 }
-
 header {
-    position: fixed; /* Меню фиксировано в верхней части */
-    top: 0; /* Прикрепляем к верхней части */
-    left: 0; /* Прикрепляем к левому краю */
-    width: 100%; /* Растягиваем на всю ширину */
-    z-index: 2; /* Заголовок выше overlay */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 2; 
 }
 
 nav {
-    display: flex; /* Используем flexbox для навигации */
-    justify-content: center; /* Центрируем элементы по горизонтали */
+    display: flex; 
+    justify-content: center; 
     font-size: large;
-    background-color: #9c7878; /* Темно-коричневый фон */
-    padding: 10px 20px; /* Отступы для навигации */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); /* Тень для визуального отделения */
+    background-color: #9c7878; 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9); 
 }
 
 nav a {
     margin-right: 15px;
     text-decoration: none;
-    color: #000000; /* Белый цвет текста */
+    color: #000000; 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .text{
-    color: #342727; /* Белый цвет текста */
+    color: #342727; 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav a:hover { /* Подчеркивание при наведении */
-    color: #fff; /* Цвет текста при наведении остается белым */
+nav a:hover { 
+    color: #fff; 
 }
 
 nav a:last-child {
-    margin-right: 0; /* Убираем отступ у последнего элемента */
+    margin-right: 0; 
 }
 
 .container {
-    display: flex; /* Используем flexbox для контейнера */
-    flex-direction: row; /* Горизонтальное расположение элементов */
-    align-items: center; /* Центрируем по вертикали */
-    width: 100%; /* Занимаем всю ширину */
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    width: 100%; 
     height: 100vh;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     background: linear-gradient(360deg, #e7cfe3, #95877f);
 }
 .container_contact {
-    display: flex; /* Используем flexbox для контейнера */
-    flex-direction: column; /* Горизонтальное расположение элементов */
-    align-items: center; /* Центрируем по вертикали */
-    width: 100%; /* Занимаем всю ширину */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
     height: 100vh;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -78,22 +71,22 @@ nav a:last-child {
     text-decoration: solid;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    flex: 1; /* Занимает оставшееся пространство */
-    padding-left: 50px; /* Отступ слева */
+    flex: 1; 
+    padding-left: 50px; 
 }
 
 .image-section {
-    position: relative; /* Для позиционирования фона и изображения */
-    width: 470px; /* Увеличиваем ширину контейнера с изображением */
-    height: 470px; /* Увеличиваем высоту контейнера с изображением */
-    border-radius: 50%; /* Делаем контейнер круглым */
-    overflow: hidden; /* Скрываем часть изображения, выходящую за пределы контейнера */
-    background-color: #9c7878; /* Цвет фона для круглого элемента */
-    padding: 10px; /* Отступ для создания эффекта выхода фона */
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.819); /* Подсвечивающаяся рамка (золотая) */
-    display: flex; /* Используем flexbox для выравнивания содержимого */
-    align-items: center; /* Центрируем содержимое по вертикали */
-    justify-content: center; /* Центрируем содержимое по горизонтали */
+    position: relative; 
+    width: 470px; 
+    height: 470px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    background-color: #9c7878; 
+    padding: 10px; 
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.819); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin-right: 40px;
 }
@@ -121,63 +114,61 @@ nav a:last-child {
     color:#fff;
 }
 
-/* Медиа-запросы для адаптивности */
-
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Изменяем направление на вертикальное */
-        height: auto; /* Высота адаптивная */
-        padding-top: 60px; /* Отступ сверху для фиксированного заголовка */
+        flex-direction: column; 
+        height: auto; 
+        padding-top: 60px; 
     }
 
     .text-section {
-        padding-left: 0; /* Убираем отступ слева на мобильных устройствах */
-        padding-bottom: 20px; /* Добавляем отступ снизу для разделения текста и изображения */
-        text-align: center; /* Выравниваем текст по центру */
-        font-size: medium; /* Уменьшаем размер шрифта для мобильных устройств */
+        padding-left: 0; 
+        padding-bottom: 20px; 
+        text-align: center; 
+        font-size: medium; 
         font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .image-section {
-        width: 300px; /* Уменьшаем ширину изображения на мобильных устройствах */
-        height: 300px; /* Уменьшаем высоту изображения на мобильных устройствах */
-        padding: 5px; /* Уменьшаем отступ для уменьшения размера фона */
-        margin-bottom: 20px; /* Добавляем отступ снизу для разделения элементов */
+        width: 300px; 
+        height: 300px;
+        padding: 5px; 
+        margin-bottom: 20px; 
     }
 
     .cta-button {
-        padding: 8px 16px; /* Уменьшаем размер кнопки на мобильных устройствах */
-        font-size: medium; /* Уменьшаем размер шрифта кнопки на мобильных устройствах */
+        padding: 8px 16px; 
+        font-size: medium; 
         font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
 }
 
 @media (max-width: 480px) {
     nav {
-        font-size: medium; /* Уменьшаем размер шрифта навигации на маленьких экранах */
-        padding: 8px 10px; /* Уменьшаем отступы в навигации на маленьких экранах */
+        font-size: medium; 
+        padding: 8px 10px; 
     }
 
     nav a {
-        margin-right: 10px; /* Уменьшаем отступ между элементами навигации на маленьких экранах */
+        margin-right: 10px; 
     }
 
     .text-section {
-        font-size: small; /* Еще больше уменьшаем размер шрифта для очень маленьких экранов */
+        font-size: small; 
     }
 
     .image-section {
-        width: 250px; /* Уменьшаем ширину изображения на очень маленьких устройствах */
-        height: 250px; /* Уменьшаем высоту изображения на очень маленьких устройствах */
+        width: 250px; 
+        height: 250px; 
     }
 
     .cta-button {
-        padding: 6px 12px; /* Уменьшаем размер кнопки на очень маленьких устройствах */
-        font-size: small; /* Уменьшаем размер шрифта кнопки на очень маленьких устройствах */
+        padding: 6px 12px; 
+        font-size: small; 
     }
 }
         * {
-    box-sizing: border-box; /* Учитываем отступы и границы */
+    box-sizing: border-box; 
 }
 
 .achieve {
@@ -185,17 +176,17 @@ nav a:last-child {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: auto; /* Высота адаптивная */
+    height: auto; 
     background-color: #895a5a;
-    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
-    justify-content: space-between; /* Распределяем элементы с равными отступами */
+    flex-wrap: wrap; 
+    justify-content: space-between; 
 }
 
 
 .flex-item {
     background-color: #9c7878;
     border-radius: 20%;
-    width: calc(33.33% - 40px); /* Учитываем отступы */
+    width: calc(33.33% - 40px); 
     padding: 20px;
     text-align: center;
     margin: 2px;
@@ -205,73 +196,73 @@ nav a:last-child {
 
 
 .flex-item img {
-    width: 100%; /* Заполняем ширину родительского элемента */
-    height: auto; /* Высота автоматически подстраивается */
-    max-width: 200px; /* Ограничиваем максимальную ширину */
-    max-height: 200px; /* Ограничиваем максимальную высоту */
-    object-fit: cover; /* Изображение будет обрезано, чтобы заполнить область */
+    width: 100%; 
+    height: auto; 
+    max-width: 200px; 
+    max-height: 200px; 
+    object-fit: cover; 
     border-radius: 30%; 
 }
 
-/* Медиа-запрос для мобильных устройств */
+
 @media (max-width: 768px) {
     .flex-item {
-        width: calc(50% - 40px); /* Два элемента в ряд на мобильных устройствах */
+        width: calc(50% - 40px); 
     }
 
     .flex-item img {
-        max-width: 150px; /* Уменьшаем размер изображений на мобильных */
+        max-width: 150px; 
         max-height: 150px; 
     }
 }
 
 @media (max-width: 480px) {
     .flex-item {
-        width: calc(100% - 40px); /* Один элемент в ряд на очень маленьких экранах */
+        width: calc(100% - 40px); 
     }
 
     .flex-item img {
-        max-width: 100px; /* Уменьшаем размер изображений еще больше */
+        max-width: 100px; 
         max-height: 100px; 
     }
 }
 .photo {
     display: flex;
-    flex-direction: row; /* Располагаем элементы в ряд */
-    justify-content: center; /* Центрируем элементы по горизонтали */
-    flex-wrap: wrap; /* Позволяем элементам переноситься на новую строку */
-    width: 100vw; /* Ширина контейнера */
-    height: auto; /* Высота адаптивная */
-    margin: 20px; /* Центрируем контейнер по горизонтали */
+    flex-direction: row; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    width: 100vw; 
+    height: auto; 
+    margin: 20px; 
     margin-top:50px;
 }
 
 .photo img {
-    border-radius: 50%; /* Делаем изображения круглыми */
-    width: 300px; /* Фиксированная ширина */
-    height: 300px; /* Фиксированная высота */
-    object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило круг */
-    margin: 10px; /* Отступы между изображениями */
+    border-radius: 50%; 
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover; 
+    margin: 10px; 
 }
 
-/* Медиа-запрос для мобильных устройств */
+
 @media (max-width: 768px) {
     .photo img {
-        width: 150px; /* Уменьшаем размер изображений на мобильных устройствах */
+        width: 150px; 
         height: 150px; 
     }
 }
 
 @media (max-width: 480px) {
     .photo img {
-        width: 100px; /* Еще больше уменьшаем размер изображений на очень маленьких экранах */
+        width: 100px; 
         height: 100px; 
     }
 }
 .contact {
-  min-height: 100vh; /* Высота на весь экран */
+  min-height: 100vh; 
   display: flex;
-  flex-direction: column; /* Изменяем направление на колонку */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -296,7 +287,7 @@ nav a:last-child {
 
 .contact_form {
   max-width: 700px;
-  width: 100%; /* Устанавливаем ширину на 100% для адаптивности */
+  width: 100%; 
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -354,24 +345,24 @@ nav a:last-child {
 /* Адаптивные стили */
 @media (max-width: 600px) {
     .contact__title {
-        font-size: 28px; /* Уменьшаем размер заголовка на мобильных устройствах */
+        font-size: 28px; 
     }
 
     .contact__description {
-        font-size: 16px; /* Уменьшаем размер описания на мобильных устройствах */
+        font-size: 16px; 
     }
 
     .contact__form {
-        padding: 15px; /* Уменьшаем отступы внутри формы */
+        padding: 15px; 
     }
 
     .form__group input,
     .form__group textarea {
-        font-size: 14px; /* Уменьшаем размер шрифта для полей ввода */
+        font-size: 14px; 
     }
 
     .contact__button {
-        font-size: 14px; /* Уменьшаем размер кнопки на мобильных устройствах */
+        font-size: 14px; 
     }
 }
 
